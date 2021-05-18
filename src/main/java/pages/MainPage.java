@@ -16,8 +16,6 @@ public class MainPage extends BasePage {
     }
 
     public void closePopupIfVisible() {
-        String text = popUpWindowHeader.getText();
-        System.out.println(text);
         if (popUpWindowHeader.is(Condition.visible)) {
             clickOkButton();
         }
