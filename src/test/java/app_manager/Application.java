@@ -1,6 +1,5 @@
 package app_manager;
 
-import pages.MainPage;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import io.github.bonigarcia.wdm.config.DriverManagerType;
 import org.openqa.selenium.WebDriver;
@@ -8,9 +7,11 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.BrowserType;
-import properties.ProjectProperties;
+import pages.MainPage;
 
 import java.util.concurrent.TimeUnit;
+
+import static constants.UiConstants.BASE_URL;
 
 public class Application {
     private WebDriver driver;
@@ -35,7 +36,7 @@ public class Application {
 
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         driver.manage().window().maximize();
-        driver.get(ProjectProperties.getWebProperties());
+        driver.get(BASE_URL);
         mainPage = new MainPage(driver);
     }
 
