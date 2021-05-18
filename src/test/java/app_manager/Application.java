@@ -1,6 +1,6 @@
 package app_manager;
 
-import helpers.MainPageHelper;
+import pages.MainPage;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import io.github.bonigarcia.wdm.config.DriverManagerType;
 import org.openqa.selenium.WebDriver;
@@ -15,7 +15,7 @@ import java.util.concurrent.TimeUnit;
 public class Application {
     private WebDriver driver;
     private String browser;
-    private MainPageHelper mainPageHelper;
+    private MainPage mainPage;
 
     public Application(String browser) {
         this.browser = browser;
@@ -36,7 +36,7 @@ public class Application {
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         driver.manage().window().maximize();
         driver.get(ProjectProperties.getWebProperties());
-        mainPageHelper = new MainPageHelper(driver);
+        mainPage = new MainPage(driver);
     }
 
 
@@ -48,7 +48,7 @@ public class Application {
         driver.switchTo().alert().accept();
     }
 
-    public MainPageHelper getMainPageHelper() {
-        return mainPageHelper;
+    public MainPage getMainPage() {
+        return mainPage;
     }
 }

@@ -1,13 +1,13 @@
-package helpers;
+package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 
-public class HelperBase {
+public class BasePage {
     protected WebDriver driver;
 
-    public HelperBase(WebDriver driver) {
+    public BasePage(WebDriver driver) {
         this.driver = driver;
     }
 
