@@ -8,6 +8,6 @@ public class FirstTest extends BaseTest {
 
     @Test
     public void openPage(){
-        application.getMainPage().login(user.getLogin(), user.getPassword());
+        application.getMainPage().closePopupIfVisible();
     }
 }
