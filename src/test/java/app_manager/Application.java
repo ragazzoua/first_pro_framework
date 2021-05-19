@@ -30,11 +30,11 @@ public class Application {
 
 
     public void stop() {
-        driver.quit();
+        Selenide.closeWebDriver();
     }
 
     public void acceptAlert() {
-        driver.switchTo().alert().accept();
+        Selenide.switchTo().alert().accept();
     }
 
     public MainPage getMainPage() {
