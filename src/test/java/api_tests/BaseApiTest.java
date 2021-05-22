@@ -7,8 +7,8 @@ import io.restassured.specification.ResponseSpecification;
 import org.testng.annotations.BeforeClass;
 import properties.ProjectProperties;
 
-import static constants.ApiConstants.EndPoints.*;
-import static constants.ApiConstants.EndPoints.LOGIN;
+import static constants.ApiConstants.EndPoints.BASE_PATH;
+import static constants.ApiConstants.EndPoints.BASE_URI;
 import static constants.ApiConstants.ResponseCodes.CODE_200;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.lessThan;
@@ -23,12 +23,12 @@ public class BaseApiTest {
                 .preemptive()
                 .basic(ProjectProperties.getProperties().getProperty("name"), ProjectProperties.getProperties().getProperty("password"))
                 .baseUri(BASE_URI)
-                .basePath(BASE_PATH + VERSION + LOGIN);
+                .basePath(BASE_PATH);
 
         RestAssured.requestSpecification = requestSpecification;
 
         responseSpecification = new ResponseSpecBuilder().expectStatusCode(CODE_200)
-                .expectResponseTime(lessThan(3000L))
+                .expectResponseTime(lessThan(4000L))
                 .build();
 
         RestAssured.requestSpecification = requestSpecification;
