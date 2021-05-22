@@ -8,6 +8,9 @@ public class ProjectProperties {
     private static Properties projectProperties;
 
     public static Properties getProperties() {
+        if (projectProperties == null) {
+            setMainSettings();
+        }
         return projectProperties;
     }
 
