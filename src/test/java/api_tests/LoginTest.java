@@ -1,20 +1,16 @@
 package api_tests;
 
 import org.testng.annotations.Test;
-import properties.ProjectProperties;
 
-import static constants.ApiConstants.EndPoints.*;
 import static io.restassured.RestAssured.given;
 
-public class LoginTest {
+public class LoginTest extends BaseApiTest {
 
     @Test
     public void basicPreemptiveAuthTests() {
-        String s = given().auth().preemptive()
-                .basic(ProjectProperties.getProperties().getProperty("name"),
-                        ProjectProperties.getProperties().getProperty("password"))
+        String s = given()
                 .when()
-                .get(BASE_URI + BASE_PATH + VERSION + LOGIN)
+                .get()
                 .then()
                 .statusCode(200).extract().asString();
         System.out.println(s);
