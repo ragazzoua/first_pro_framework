@@ -24,6 +24,7 @@ public class BaseApiTest {
         projectRequestSpecification = new RequestSpecBuilder().setBaseUri(BASE_URI)
                 .setBasePath(BASE_PATH)
                 .setContentType(ContentType.JSON)
+                .setAccept(ContentType.JSON)
                 .addFilter(new RequestLoggingFilter())
                 .addFilter(new ResponseLoggingFilter())
                 .build();
