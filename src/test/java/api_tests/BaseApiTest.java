@@ -1,37 +1,40 @@
 package api_tests;
 
 import io.restassured.RestAssured;
+import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.builder.ResponseSpecBuilder;
+import io.restassured.filter.log.RequestLoggingFilter;
+import io.restassured.filter.log.ResponseLoggingFilter;
+import io.restassured.http.ContentType;
 import io.restassured.specification.RequestSpecification;
 import io.restassured.specification.ResponseSpecification;
 import org.testng.annotations.BeforeClass;
-import properties.ProjectProperties;
 
-import static constants.ApiConstants.EndPoints.BASE_PATH;
-import static constants.ApiConstants.EndPoints.BASE_URI;
+import static constants.ApiConstants.Paths.BASE_PATH;
+import static constants.ApiConstants.Paths.BASE_URI;
 import static constants.ApiConstants.ResponseCodes.CODE_200;
-import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.lessThan;
 
 public class BaseApiTest {
-    private static RequestSpecification requestSpecification;
-    private static ResponseSpecification responseSpecification;
+    private static RequestSpecification projectRequestSpecification;
+    private static ResponseSpecification projectResponseSpecification;
 
     @BeforeClass
     public void setup() {
-        requestSpecification = given().auth()
-                .preemptive()
-                .basic(ProjectProperties.getProperties().getProperty("name"), ProjectProperties.getProperties().getProperty("password"))
-                .baseUri(BASE_URI)
-                .basePath(BASE_PATH);
+        projectRequestSpecification = new RequestSpecBuilder().setBaseUri(BASE_URI)
+                .setBasePath(BASE_PATH)
+                .setContentType(ContentType.JSON)
+                .addFilter(new RequestLoggingFilter())
+                .addFilter(new ResponseLoggingFilter())
+                .build();
 
-        RestAssured.requestSpecification = requestSpecification;
+        RestAssured.requestSpecification = projectRequestSpecification;
 
-        responseSpecification = new ResponseSpecBuilder().expectStatusCode(CODE_200)
+        projectResponseSpecification = new ResponseSpecBuilder().expectStatusCode(CODE_200)
                 .expectResponseTime(lessThan(4000L))
                 .build();
 
-        RestAssured.requestSpecification = requestSpecification;
-        RestAssured.responseSpecification = responseSpecification;
+        RestAssured.requestSpecification = projectRequestSpecification;
+        RestAssured.responseSpecification = projectResponseSpecification;
     }
 }
