@@ -10,9 +10,8 @@ import io.restassured.specification.RequestSpecification;
 import io.restassured.specification.ResponseSpecification;
 import org.testng.annotations.BeforeClass;
 
-import static constants.ApiConstants.Paths.BASE_PATH;
-import static constants.ApiConstants.Paths.BASE_URI;
-import static constants.ApiConstants.ResponseCodes.CODE_200;
+import static constants.CosmosIdApiConstants.Paths.BASE_PATH;
+import static constants.CosmosIdApiConstants.Paths.BASE_URI;
 import static org.hamcrest.Matchers.lessThan;
 
 public class BaseApiTest {
@@ -31,7 +30,7 @@ public class BaseApiTest {
 
         RestAssured.requestSpecification = projectRequestSpecification;
 
-        projectResponseSpecification = new ResponseSpecBuilder().expectStatusCode(CODE_200)
+        projectResponseSpecification = new ResponseSpecBuilder()
                 .expectResponseTime(lessThan(4000L))
                 .build();
 
