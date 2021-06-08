@@ -58,6 +58,8 @@ public class MainEndPointsTest extends BaseApiTest {
                 .get(METAGENID + VERSION_V2 + FILES + QUESTION_MARK + BREADCRUMBS + "=1&offset=0&limit=1000&_=1622700773180")
                 .then()
                 .statusCode(CODE_200)
-                .body("items.name[0]", equalTo("Example_Datasets"));
+                .body("items.name[0]", equalTo("Example_Datasets"))
+                .and()
+                .body("name", equalTo("ROOT0"));
     }
 }
