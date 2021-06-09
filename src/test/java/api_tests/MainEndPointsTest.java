@@ -60,7 +60,7 @@ public class MainEndPointsTest extends BaseApiTest {
                 .statusCode(CODE_200)
                 .body("items.name[0]", equalTo("Example_Datasets"))
                 .and()
-                .body("name", equalTo("ROOT0"));
+                .body("name", equalTo("ROOT"));
     }
 
     @Test
