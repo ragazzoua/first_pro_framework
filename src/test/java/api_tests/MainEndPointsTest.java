@@ -62,4 +62,39 @@ public class MainEndPointsTest extends BaseApiTest {
                 .and()
                 .body("name", equalTo("ROOT0"));
     }
+
+    @Test
+    public void getRunsTest() {
+        given().header("x-token", token)
+                .when()
+                .get(METAGENID + VERSION_V1 + FILES + "/7f4c7326-0a4e-4b56-a8d0-8ce002191672/runs?_=1622700773181")
+                .then()
+                .statusCode(CODE_200)
+                .body("runs.status[0]", equalTo("Success"));
+    }
+
+    @Test
+    public void getAnalysisTest() {
+        given().header("x-token", token)
+                .when()
+                .get(METAGENID + VERSION_V1 + RUNS + "/437ef8e4-b595-4fd8-a2f5-64221831e925/analysis?filter=total&_=1622700773184")
+                .then()
+                .statusCode(CODE_200)
+                .body("analysis.status[0]", equalTo("Success"));
+    }
+
+    @Test
+    public void getArtifactsTest() {
+        given().header("x-token", token)
+                .when()
+                .get(METAGENID + VERSION_V1 + RUNS + "/437ef8e4-b595-4fd8-a2f5-64221831e925/artifacts?_=1622700773185")
+                .then()
+                .statusCode(CODE_200)
+                .body("artifacts.artifact_type[0]", equalTo("ura"))
+                .and()
+                .body("artifacts.artifact_type[1]", equalTo("fastqc"));
+
+    }
+
+    //https://app.cosmosid.com/api/metagenid/v1/runs/437ef8e4-b595-4fd8-a2f5-64221831e925/artifacts?_=1622700773185
 }

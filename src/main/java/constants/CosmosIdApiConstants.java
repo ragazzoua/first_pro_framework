@@ -17,6 +17,7 @@ public class CosmosIdApiConstants {
         public static final String LOGIN = "/login";
         public static final String PROFILE = "/profile";
         public static final String METAGENID = "/metagenid";
+        public static final String RUNS = "/runs";
         public static final String FILES = "/files";
         public static final String COUNT = "/count?";
         public static final String FOLDER_ID = "folder_id=";
