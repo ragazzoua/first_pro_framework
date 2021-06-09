@@ -12,7 +12,7 @@ import static org.hamcrest.Matchers.equalTo;
 
 public class MainEndPointsTest extends BaseApiTest {
 
-    String token;
+    private String token;
 
     @BeforeClass
     public void init() {
