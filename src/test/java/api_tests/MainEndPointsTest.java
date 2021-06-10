@@ -43,7 +43,7 @@ public class MainEndPointsTest extends BaseApiTest {
 
     @Test
     public void getFilesCountFromFolderTest() {
-        given().header("x-token", token)
+        given().header(X_TOKEN, token)
                 .when()
                 .get(FILES_PATH + COUNT + FOLDER_ID + "84c966d5-8dce-429d-8f92-44d5e28b1581&_=1622828908054")
                 .then()
@@ -53,7 +53,7 @@ public class MainEndPointsTest extends BaseApiTest {
 
     @Test
     public void getFilesFromRootFolderTest() {
-        given().header("x-token", token)
+        given().header(X_TOKEN, token)
                 .when()
                 .get(FILES_PATH + QUESTION_MARK + BREADCRUMBS + "=1&offset=0&limit=1000&_=1622700773180")
                 .then()
@@ -65,7 +65,7 @@ public class MainEndPointsTest extends BaseApiTest {
 
     @Test
     public void getRunsTest() {
-        given().header("x-token", token)
+        given().header(X_TOKEN, token)
                 .when()
                 .get(METAGENID + VERSION_V1 + FILES + "/7f4c7326-0a4e-4b56-a8d0-8ce002191672/runs?_=1622700773181")
                 .then()
@@ -75,9 +75,9 @@ public class MainEndPointsTest extends BaseApiTest {
 
     @Test
     public void getAnalysisTest() {
-        given().header("x-token", token)
+        given().header(X_TOKEN, token)
                 .when()
-                .get(METAGENID + VERSION_V1 + RUNS + "/437ef8e4-b595-4fd8-a2f5-64221831e925/analysis?filter=total&_=1622700773184")
+                .get(RUNS_PATH + "/437ef8e4-b595-4fd8-a2f5-64221831e925/analysis?filter=total&_=1622700773184")
                 .then()
                 .statusCode(CODE_200)
                 .body("analysis.status[0]", equalTo("Success"));
@@ -85,9 +85,9 @@ public class MainEndPointsTest extends BaseApiTest {
 
     @Test
     public void getArtifactsTest() {
-        given().header("x-token", token)
+        given().header(X_TOKEN, token)
                 .when()
-                .get(METAGENID + VERSION_V1 + RUNS + "/437ef8e4-b595-4fd8-a2f5-64221831e925/artifacts?_=1622700773185")
+                .get(RUNS_PATH + "/437ef8e4-b595-4fd8-a2f5-64221831e925/artifacts?_=1622700773185")
                 .then()
                 .statusCode(CODE_200)
                 .body("artifacts.artifact_type[0]", equalTo("ura"))
