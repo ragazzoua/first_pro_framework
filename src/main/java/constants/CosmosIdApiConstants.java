@@ -23,5 +23,6 @@ public class CosmosIdApiConstants {
         public static final String FOLDER_ID = "folder_id=";
         public static final String QUESTION_MARK = "?";
         public static final String BREADCRUMBS = "breadcrumbs";
+        public static final String FILES_PATH = METAGENID + VERSION_V2 + FILES;
     }
 }

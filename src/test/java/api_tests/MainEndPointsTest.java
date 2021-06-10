@@ -45,7 +45,7 @@ public class MainEndPointsTest extends BaseApiTest {
     public void getFilesCountFromFolderTest() {
         given().header("x-token", token)
                 .when()
-                .get(METAGENID + VERSION_V2 + FILES + COUNT + FOLDER_ID + "84c966d5-8dce-429d-8f92-44d5e28b1581&_=1622828908054")
+                .get(FILES_PATH + COUNT + FOLDER_ID + "84c966d5-8dce-429d-8f92-44d5e28b1581&_=1622828908054")
                 .then()
                 .statusCode(CODE_200)
                 .body("total", equalTo(58));
@@ -55,7 +55,7 @@ public class MainEndPointsTest extends BaseApiTest {
     public void getFilesFromRootFolderTest() {
         given().header("x-token", token)
                 .when()
-                .get(METAGENID + VERSION_V2 + FILES + QUESTION_MARK + BREADCRUMBS + "=1&offset=0&limit=1000&_=1622700773180")
+                .get(FILES_PATH + QUESTION_MARK + BREADCRUMBS + "=1&offset=0&limit=1000&_=1622700773180")
                 .then()
                 .statusCode(CODE_200)
                 .body("items.name[0]", equalTo("Example_Datasets"))
@@ -95,6 +95,4 @@ public class MainEndPointsTest extends BaseApiTest {
                 .body("artifacts.artifact_type[1]", equalTo("fastqc"));
 
     }
-
-    //https://app.cosmosid.com/api/metagenid/v1/runs/437ef8e4-b595-4fd8-a2f5-64221831e925/artifacts?_=1622700773185
 }
