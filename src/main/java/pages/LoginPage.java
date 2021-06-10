@@ -28,11 +28,12 @@ public class LoginPage extends BasePage {
         okButtonOnPopUpWindow.click();
     }
 
-    public void login(String userName, String password) {
+    public MainPage login(String userName, String password) {
         closePopupIfVisible();
         fillInEmailField(userName);
         fillInPasswordField(password);
         clickSignInButton();
+        return new MainPage(driver);
     }
 
     private void fillInPasswordField(String password) {

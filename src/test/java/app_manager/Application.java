@@ -4,6 +4,7 @@ import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.WebDriverRunner;
 import org.openqa.selenium.WebDriver;
 import pages.LoginPage;
+import pages.MainPage;
 import properties.ProjectProperties;
 
 import java.util.concurrent.TimeUnit;
@@ -14,6 +15,7 @@ public class Application {
     private WebDriver driver;
     private String browser;
     private LoginPage loginPage;
+    private MainPage mainPage;
 
     public Application(String browser) {
         this.browser = browser;
@@ -26,6 +28,7 @@ public class Application {
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         driver.manage().window().maximize();
         loginPage = new LoginPage(driver);
+        mainPage = new MainPage(driver);
     }
 
 
