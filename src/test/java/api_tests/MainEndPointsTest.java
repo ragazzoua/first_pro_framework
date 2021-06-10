@@ -9,6 +9,8 @@ import static constants.CosmosIdApiConstants.Paths.*;
 import static constants.CosmosIdApiConstants.ResponseCodes.CODE_200;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
+import static utils.ApiFilesUtils.ROOT_FOLDER;
+import static utils.ApiFilesUtils.getQueryFilesParams;
 
 public class MainEndPointsTest extends BaseApiTest {
 
@@ -50,17 +52,18 @@ public class MainEndPointsTest extends BaseApiTest {
                 .statusCode(CODE_200)
                 .body("total", equalTo(58));
     }
-
+//GET https://app.cosmosid.com/api/metagenid/v2/files/count?folder_id=84c966d5-8dce-429d-8f92-44d5e28b1581&_=1622700773179
     @Test
     public void getFilesFromRootFolderTest() {
         given().header(X_TOKEN, token)
+                .queryParams(getQueryFilesParams())
                 .when()
-                .get(FILES_PATH + QUESTION_MARK + BREADCRUMBS + "=1&offset=0&limit=1000&_=1622700773180")
+                .get(FILES_PATH)
                 .then()
                 .statusCode(CODE_200)
                 .body("items.name[0]", equalTo("Example_Datasets"))
                 .and()
-                .body("name", equalTo("ROOT"));
+                .body("name", equalTo(ROOT_FOLDER));
     }
 
     @Test

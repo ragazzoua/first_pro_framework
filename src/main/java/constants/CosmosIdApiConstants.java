@@ -21,10 +21,12 @@ public class CosmosIdApiConstants {
         public static final String FILES = "/files";
         public static final String COUNT = "/count?";
         public static final String FOLDER_ID = "folder_id=";
-        public static final String QUESTION_MARK = "?";
-        public static final String BREADCRUMBS = "breadcrumbs";
         public static final String FILES_PATH = METAGENID + VERSION_V2 + FILES;
         public static final String RUNS_PATH = METAGENID + VERSION_V1 + RUNS;
         public static final String X_TOKEN = "x-token";
+    }
+
+    public static final class Endpoints {
+
     }
 }
