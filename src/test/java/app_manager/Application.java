@@ -43,4 +43,7 @@ public class Application {
     public LoginPage getLoginPage() {
         return loginPage;
     }
+    public MainPage getMainPage() {
+        return mainPage;
+    }
 }
