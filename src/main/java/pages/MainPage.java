@@ -23,4 +23,8 @@ public class MainPage extends BasePage {
             return false;
         }
     }
+
+    public void openExampleDatasetsFolder() {
+        exampleDatasetsFolder.shouldBe(Condition.visible).click();
+    }
 }
