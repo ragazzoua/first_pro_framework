@@ -4,6 +4,7 @@ import com.codeborne.selenide.CollectionCondition;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.Selectors;
 import com.codeborne.selenide.SelenideElement;
+import logger.TestLogger;
 import model.DataSet;
 import org.openqa.selenium.WebDriver;
 
@@ -27,11 +28,15 @@ public class ExampleDatasetsFolderPage extends BasePage {
     }
 
     public int getFilesCount() {
-        return dataSets.size();
+        int size = dataSets.size();
+        TestLogger.reportInfoStep("%s files on the page", size);
+        return size;
+
     }
 
     public void openFile(int index) {
         dataSets.shouldHave(CollectionCondition.sizeGreaterThan(0)).get(index).doubleClick();
+        TestLogger.reportInfoStep("File by index - %s was opened", index);
     }
 
     public List<DataSet> getFileNames() {

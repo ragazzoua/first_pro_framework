@@ -3,6 +3,7 @@ package pages;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Selectors;
 import com.codeborne.selenide.SelenideElement;
+import logger.TestLogger;
 import org.openqa.selenium.WebDriver;
 
 import static com.codeborne.selenide.Selenide.$;
@@ -17,6 +18,7 @@ public class FilePage extends BasePage{
 
     public String getFileName() {
         String name = fileNameHeader.shouldBe(Condition.visible).text();
+        TestLogger.reportInfoStep("File name is - %s", name);
         return name;
     }
 }

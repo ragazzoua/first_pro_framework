@@ -3,6 +3,7 @@ package pages;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Selectors;
 import com.codeborne.selenide.SelenideElement;
+import logger.TestLogger;
 import org.openqa.selenium.WebDriver;
 
 import static com.codeborne.selenide.Selenide.$;
@@ -26,5 +27,6 @@ public class MainPage extends BasePage {
 
     public void openExampleDatasetsFolder() {
         exampleDatasetsFolder.shouldBe(Condition.visible).click();
+        TestLogger.reportInfoStep("Example Datasets folder was opened");
     }
 }
