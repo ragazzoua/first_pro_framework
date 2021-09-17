@@ -2,6 +2,7 @@ package pages;
 
 import com.codeborne.selenide.Selectors;
 import com.codeborne.selenide.SelenideElement;
+import logger.TestLogger;
 import org.openqa.selenium.WebDriver;
 
 import static com.codeborne.selenide.Condition.visible;
@@ -26,6 +27,7 @@ public class LoginPage extends BasePage {
 
     private void clickOkButtonOnPopUp() {
         okButtonOnPopUpWindow.click();
+        TestLogger.reportInfoStep("Pop up button was clicked");
     }
 
     public void login(String userName, String password) {
@@ -33,20 +35,24 @@ public class LoginPage extends BasePage {
         fillInEmailField(userName);
         fillInPasswordField(password);
         clickSignInButton();
+        TestLogger.reportInfoStep("User login successfully");
     }
 
     private void fillInPasswordField(String password) {
         passwordField.shouldBe(visible).click();
         passwordField.val(password);
+        TestLogger.reportInfoStep("password was fill in");
     }
 
     private void fillInEmailField(String userName) {
         emailAddressField.shouldBe(visible).click();
         emailAddressField.val(userName);
+        TestLogger.reportInfoStep("%s username fill in", userName);
     }
 
     private void clickSignInButton() {
         signInButton.shouldBe(visible).click();
+        TestLogger.reportInfoStep("Sign in button was clicked");
     }
 
     public String getText() {
