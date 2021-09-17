@@ -7,11 +7,15 @@ import properties.ProjectProperties;
 
 import static constants.CosmosIdApiConstants.Paths.*;
 import static constants.CosmosIdApiConstants.ResponseCodes.CODE_200;
+import static constants.CosmosIdApiConstants.ValueFromResponse.*;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
+import static utils.ApiQueryParamsUtils.*;
+import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
 
 public class MainEndPointsTest extends BaseApiTest {
-
+    public static final String SUCCESS = "Success";
+    public static final int FILES_COUNT = 58;
     private String token;
 
     @BeforeClass
@@ -38,61 +42,78 @@ public class MainEndPointsTest extends BaseApiTest {
                 .contentType(ContentType.JSON)
                 .post(VERSION_V1 + LOGIN)
                 .then()
-                .statusCode(CODE_200);
+                .statusCode(CODE_200)
+                .and()
+                .body(matchesJsonSchemaInClasspath("schemas/authorizationSchema.json"));
     }
 
     @Test
     public void getFilesCountFromFolderTest() {
         given().header(X_TOKEN, token)
+                .queryParams(getCountQueryParams())
                 .when()
-                .get(FILES_PATH + COUNT + FOLDER_ID + "84c966d5-8dce-429d-8f92-44d5e28b1581&_=1622828908054")
+                .get(FILES_PATH_V2 + COUNT)
                 .then()
                 .statusCode(CODE_200)
-                .body("total", equalTo(58));
+                .body(TOTAL, equalTo(FILES_COUNT))
+                .and()
+                .body(matchesJsonSchemaInClasspath("schemas/countSchema.json"));
     }
 
     @Test
     public void getFilesFromRootFolderTest() {
         given().header(X_TOKEN, token)
+                .queryParams(getQueryFilesParams())
                 .when()
-                .get(FILES_PATH + QUESTION_MARK + BREADCRUMBS + "=1&offset=0&limit=1000&_=1622700773180")
+                .get(FILES_PATH_V2)
                 .then()
                 .statusCode(CODE_200)
-                .body("items.name[0]", equalTo("Example_Datasets"))
+                .body(ITEMS_NAME_0, equalTo("Example_Datasets"))
                 .and()
-                .body("name", equalTo("ROOT"));
+                .body(NAME, equalTo("ROOT"))
+                .and()
+                .body(matchesJsonSchemaInClasspath("schemas/rootFolderSchema.json"));
     }
 
     @Test
     public void getRunsTest() {
         given().header(X_TOKEN, token)
+                .queryParams(getRunQueryParams())
                 .when()
-                .get(METAGENID + VERSION_V1 + FILES + "/7f4c7326-0a4e-4b56-a8d0-8ce002191672/runs?_=1622700773181")
+                .get(FILES_PATH_V1 + RUNS_VALUE + RUNS)
                 .then()
                 .statusCode(CODE_200)
-                .body("runs.status[0]", equalTo("Success"));
+                .body(RUNS_STATUS_0, equalTo(SUCCESS))
+                .and()
+                .body(matchesJsonSchemaInClasspath("schemas/runsSchema.json"));
     }
 
     @Test
     public void getAnalysisTest() {
         given().header(X_TOKEN, token)
+                .queryParams(getAnalysisQueryParams())
                 .when()
-                .get(RUNS_PATH + "/437ef8e4-b595-4fd8-a2f5-64221831e925/analysis?filter=total&_=1622700773184")
+                .get(RUNS_PATH + ARTIFACTS_VALUE + ANALYSIS)
                 .then()
                 .statusCode(CODE_200)
-                .body("analysis.status[0]", equalTo("Success"));
+                .body(ANALYSIS_STATUS_0, equalTo(SUCCESS))
+                .and()
+                .body(matchesJsonSchemaInClasspath("schemas/analysisSchema.json"));
     }
 
     @Test
     public void getArtifactsTest() {
         given().header(X_TOKEN, token)
+                .queryParams(getArtifactsQueryParams())
                 .when()
-                .get(RUNS_PATH + "/437ef8e4-b595-4fd8-a2f5-64221831e925/artifacts?_=1622700773185")
+                .get(RUNS_PATH + ARTIFACTS_VALUE + ARTIFACTS)
                 .then()
                 .statusCode(CODE_200)
-                .body("artifacts.artifact_type[0]", equalTo("ura"))
+                .body(ARTIFACTS_ARTIFACT_TYPE_0, equalTo("ura"))
                 .and()
-                .body("artifacts.artifact_type[1]", equalTo("fastqc"));
+                .body(ARTIFACTS_ARTIFACT_TYPE_1, equalTo("fastqc"))
+                .and()
+                .body(matchesJsonSchemaInClasspath("schemas/artifactsSchema.json"));
 
     }
 }
