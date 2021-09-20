@@ -1,0 +1,128 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "runs": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "status": {
+              "type": "string"
+            },
+            "created": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "status",
+            "created"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "status": {
+              "type": "string"
+            },
+            "created": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "status",
+            "created"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "status": {
+              "type": "string"
+            },
+            "created": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "status",
+            "created"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "status": {
+              "type": "string"
+            },
+            "created": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "status",
+            "created"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "status": {
+              "type": "string"
+            },
+            "created": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "status",
+            "created"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "status": {
+              "type": "string"
+            },
+            "created": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "status",
+            "created"
+          ]
+        }
+      ]
+    }
+  },
+  "required": [
+    "runs"
+  ]
+}

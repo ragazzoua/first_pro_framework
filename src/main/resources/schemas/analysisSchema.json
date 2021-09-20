@@ -1,0 +1,905 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "analysis": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "status": {
+              "type": "string"
+            },
+            "strains_filtered": {
+              "type": "integer"
+            },
+            "version": {
+              "type": "object",
+              "properties": {
+                "database_version": {
+                  "type": "string"
+                },
+                "codebase_version": {
+                  "type": "null"
+                },
+                "id": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "database_version",
+                "codebase_version",
+                "id"
+              ]
+            },
+            "database": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "feature": {
+                  "type": "string"
+                },
+                "db_order": {
+                  "type": "integer"
+                },
+                "db_type": {
+                  "type": "integer"
+                },
+                "id": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "name",
+                "description",
+                "feature",
+                "db_order",
+                "db_type",
+                "id"
+              ]
+            },
+            "hits": {
+              "type": "integer"
+            },
+            "reads_hits": {
+              "type": "integer"
+            },
+            "strains": {
+              "type": "integer"
+            },
+            "reads_total": {
+              "type": "integer"
+            },
+            "started": {
+              "type": "null"
+            },
+            "created": {
+              "type": "string"
+            },
+            "finished": {
+              "type": "null"
+            },
+            "id": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "status",
+            "strains_filtered",
+            "version",
+            "database",
+            "hits",
+            "reads_hits",
+            "strains",
+            "reads_total",
+            "started",
+            "created",
+            "finished",
+            "id"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "status": {
+              "type": "string"
+            },
+            "strains_filtered": {
+              "type": "integer"
+            },
+            "version": {
+              "type": "object",
+              "properties": {
+                "database_version": {
+                  "type": "string"
+                },
+                "codebase_version": {
+                  "type": "null"
+                },
+                "id": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "database_version",
+                "codebase_version",
+                "id"
+              ]
+            },
+            "database": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "feature": {
+                  "type": "string"
+                },
+                "db_order": {
+                  "type": "integer"
+                },
+                "db_type": {
+                  "type": "integer"
+                },
+                "id": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "name",
+                "description",
+                "feature",
+                "db_order",
+                "db_type",
+                "id"
+              ]
+            },
+            "hits": {
+              "type": "integer"
+            },
+            "reads_hits": {
+              "type": "integer"
+            },
+            "strains": {
+              "type": "integer"
+            },
+            "reads_total": {
+              "type": "integer"
+            },
+            "started": {
+              "type": "null"
+            },
+            "created": {
+              "type": "string"
+            },
+            "finished": {
+              "type": "null"
+            },
+            "id": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "status",
+            "strains_filtered",
+            "version",
+            "database",
+            "hits",
+            "reads_hits",
+            "strains",
+            "reads_total",
+            "started",
+            "created",
+            "finished",
+            "id"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "status": {
+              "type": "string"
+            },
+            "strains_filtered": {
+              "type": "integer"
+            },
+            "version": {
+              "type": "object",
+              "properties": {
+                "database_version": {
+                  "type": "string"
+                },
+                "codebase_version": {
+                  "type": "null"
+                },
+                "id": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "database_version",
+                "codebase_version",
+                "id"
+              ]
+            },
+            "database": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "feature": {
+                  "type": "string"
+                },
+                "db_order": {
+                  "type": "integer"
+                },
+                "db_type": {
+                  "type": "integer"
+                },
+                "id": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "name",
+                "description",
+                "feature",
+                "db_order",
+                "db_type",
+                "id"
+              ]
+            },
+            "hits": {
+              "type": "integer"
+            },
+            "reads_hits": {
+              "type": "integer"
+            },
+            "strains": {
+              "type": "integer"
+            },
+            "reads_total": {
+              "type": "integer"
+            },
+            "started": {
+              "type": "null"
+            },
+            "created": {
+              "type": "string"
+            },
+            "finished": {
+              "type": "null"
+            },
+            "id": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "status",
+            "strains_filtered",
+            "version",
+            "database",
+            "hits",
+            "reads_hits",
+            "strains",
+            "reads_total",
+            "started",
+            "created",
+            "finished",
+            "id"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "status": {
+              "type": "string"
+            },
+            "strains_filtered": {
+              "type": "integer"
+            },
+            "version": {
+              "type": "object",
+              "properties": {
+                "database_version": {
+                  "type": "string"
+                },
+                "codebase_version": {
+                  "type": "null"
+                },
+                "id": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "database_version",
+                "codebase_version",
+                "id"
+              ]
+            },
+            "database": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "feature": {
+                  "type": "string"
+                },
+                "db_order": {
+                  "type": "integer"
+                },
+                "db_type": {
+                  "type": "integer"
+                },
+                "id": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "name",
+                "description",
+                "feature",
+                "db_order",
+                "db_type",
+                "id"
+              ]
+            },
+            "hits": {
+              "type": "integer"
+            },
+            "reads_hits": {
+              "type": "integer"
+            },
+            "strains": {
+              "type": "integer"
+            },
+            "reads_total": {
+              "type": "integer"
+            },
+            "started": {
+              "type": "null"
+            },
+            "created": {
+              "type": "string"
+            },
+            "finished": {
+              "type": "null"
+            },
+            "id": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "status",
+            "strains_filtered",
+            "version",
+            "database",
+            "hits",
+            "reads_hits",
+            "strains",
+            "reads_total",
+            "started",
+            "created",
+            "finished",
+            "id"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "status": {
+              "type": "string"
+            },
+            "strains_filtered": {
+              "type": "integer"
+            },
+            "version": {
+              "type": "object",
+              "properties": {
+                "database_version": {
+                  "type": "string"
+                },
+                "codebase_version": {
+                  "type": "null"
+                },
+                "id": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "database_version",
+                "codebase_version",
+                "id"
+              ]
+            },
+            "database": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "feature": {
+                  "type": "string"
+                },
+                "db_order": {
+                  "type": "integer"
+                },
+                "db_type": {
+                  "type": "integer"
+                },
+                "id": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "name",
+                "description",
+                "feature",
+                "db_order",
+                "db_type",
+                "id"
+              ]
+            },
+            "hits": {
+              "type": "integer"
+            },
+            "reads_hits": {
+              "type": "integer"
+            },
+            "strains": {
+              "type": "integer"
+            },
+            "reads_total": {
+              "type": "integer"
+            },
+            "started": {
+              "type": "null"
+            },
+            "created": {
+              "type": "string"
+            },
+            "finished": {
+              "type": "null"
+            },
+            "id": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "status",
+            "strains_filtered",
+            "version",
+            "database",
+            "hits",
+            "reads_hits",
+            "strains",
+            "reads_total",
+            "started",
+            "created",
+            "finished",
+            "id"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "status": {
+              "type": "string"
+            },
+            "strains_filtered": {
+              "type": "integer"
+            },
+            "version": {
+              "type": "object",
+              "properties": {
+                "database_version": {
+                  "type": "string"
+                },
+                "codebase_version": {
+                  "type": "null"
+                },
+                "id": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "database_version",
+                "codebase_version",
+                "id"
+              ]
+            },
+            "database": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "feature": {
+                  "type": "string"
+                },
+                "db_order": {
+                  "type": "integer"
+                },
+                "db_type": {
+                  "type": "integer"
+                },
+                "id": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "name",
+                "description",
+                "feature",
+                "db_order",
+                "db_type",
+                "id"
+              ]
+            },
+            "hits": {
+              "type": "integer"
+            },
+            "reads_hits": {
+              "type": "integer"
+            },
+            "strains": {
+              "type": "integer"
+            },
+            "reads_total": {
+              "type": "integer"
+            },
+            "started": {
+              "type": "null"
+            },
+            "created": {
+              "type": "string"
+            },
+            "finished": {
+              "type": "null"
+            },
+            "id": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "status",
+            "strains_filtered",
+            "version",
+            "database",
+            "hits",
+            "reads_hits",
+            "strains",
+            "reads_total",
+            "started",
+            "created",
+            "finished",
+            "id"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "status": {
+              "type": "string"
+            },
+            "strains_filtered": {
+              "type": "integer"
+            },
+            "version": {
+              "type": "object",
+              "properties": {
+                "database_version": {
+                  "type": "string"
+                },
+                "codebase_version": {
+                  "type": "null"
+                },
+                "id": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "database_version",
+                "codebase_version",
+                "id"
+              ]
+            },
+            "database": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "feature": {
+                  "type": "string"
+                },
+                "db_order": {
+                  "type": "integer"
+                },
+                "db_type": {
+                  "type": "integer"
+                },
+                "id": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "name",
+                "description",
+                "feature",
+                "db_order",
+                "db_type",
+                "id"
+              ]
+            },
+            "hits": {
+              "type": "integer"
+            },
+            "reads_hits": {
+              "type": "integer"
+            },
+            "strains": {
+              "type": "integer"
+            },
+            "reads_total": {
+              "type": "integer"
+            },
+            "started": {
+              "type": "null"
+            },
+            "created": {
+              "type": "string"
+            },
+            "finished": {
+              "type": "null"
+            },
+            "id": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "status",
+            "strains_filtered",
+            "version",
+            "database",
+            "hits",
+            "reads_hits",
+            "strains",
+            "reads_total",
+            "started",
+            "created",
+            "finished",
+            "id"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "status": {
+              "type": "string"
+            },
+            "strains_filtered": {
+              "type": "integer"
+            },
+            "version": {
+              "type": "object",
+              "properties": {
+                "database_version": {
+                  "type": "string"
+                },
+                "codebase_version": {
+                  "type": "null"
+                },
+                "id": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "database_version",
+                "codebase_version",
+                "id"
+              ]
+            },
+            "database": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "feature": {
+                  "type": "string"
+                },
+                "db_order": {
+                  "type": "integer"
+                },
+                "db_type": {
+                  "type": "integer"
+                },
+                "id": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "name",
+                "description",
+                "feature",
+                "db_order",
+                "db_type",
+                "id"
+              ]
+            },
+            "hits": {
+              "type": "integer"
+            },
+            "reads_hits": {
+              "type": "integer"
+            },
+            "strains": {
+              "type": "integer"
+            },
+            "reads_total": {
+              "type": "integer"
+            },
+            "started": {
+              "type": "null"
+            },
+            "created": {
+              "type": "string"
+            },
+            "finished": {
+              "type": "null"
+            },
+            "id": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "status",
+            "strains_filtered",
+            "version",
+            "database",
+            "hits",
+            "reads_hits",
+            "strains",
+            "reads_total",
+            "started",
+            "created",
+            "finished",
+            "id"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "status": {
+              "type": "string"
+            },
+            "strains_filtered": {
+              "type": "integer"
+            },
+            "version": {
+              "type": "object",
+              "properties": {
+                "database_version": {
+                  "type": "string"
+                },
+                "codebase_version": {
+                  "type": "null"
+                },
+                "id": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "database_version",
+                "codebase_version",
+                "id"
+              ]
+            },
+            "database": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "feature": {
+                  "type": "string"
+                },
+                "db_order": {
+                  "type": "integer"
+                },
+                "db_type": {
+                  "type": "integer"
+                },
+                "id": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "name",
+                "description",
+                "feature",
+                "db_order",
+                "db_type",
+                "id"
+              ]
+            },
+            "hits": {
+              "type": "integer"
+            },
+            "reads_hits": {
+              "type": "integer"
+            },
+            "strains": {
+              "type": "integer"
+            },
+            "reads_total": {
+              "type": "integer"
+            },
+            "started": {
+              "type": "null"
+            },
+            "created": {
+              "type": "string"
+            },
+            "finished": {
+              "type": "null"
+            },
+            "id": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "status",
+            "strains_filtered",
+            "version",
+            "database",
+            "hits",
+            "reads_hits",
+            "strains",
+            "reads_total",
+            "started",
+            "created",
+            "finished",
+            "id"
+          ]
+        }
+      ]
+    }
+  },
+  "required": [
+    "analysis"
+  ]
+}
